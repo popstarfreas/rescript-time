@@ -88,3 +88,7 @@ let minus = (self: t, a: t): t => {
 let zero = {
     milliseconds: 0.0,
 }
+
+let toString = (self: t): string => {
+    self.milliseconds->Js.Float.toString++"ms"
+}

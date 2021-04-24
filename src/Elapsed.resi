@@ -6,3 +6,4 @@ let fromMilliseconds: float => t
 let minus: (t, t) => t
 let smallerThan: (t, t) => bool
 let greaterThan: (t, t) => bool
+let toString: t => string
