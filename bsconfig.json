@@ -1,0 +1,7 @@
+{
+  "name": "rescript-time",
+  "namespace": "Time",
+  "sources": {
+    "dir": "src"
+  }
+}
