@@ -79,6 +79,10 @@ let fromMilliseconds = (a: float): t => {
     milliseconds: a,
 }
 
+let toMilliseconds = (self: t): float => {
+    self.milliseconds
+}
+
 let minus = (self: t, a: t): t => {
     {
         milliseconds: self.milliseconds -. a.milliseconds,
