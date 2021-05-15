@@ -1,5 +1,5 @@
 {
-  "name": "rescript-time",
+  "name": "@popstarfreas/rescript-time",
   "namespace": "Time",
   "sources": {
     "dir": "src"
