@@ -24,3 +24,7 @@ let toString = (self: t): string => {
     ->Js.Date.fromFloat
     ->Js.Date.toISOString
 }
+
+let toFloat = (self: t): float => {
+    self.milliseconds
+}
