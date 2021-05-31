@@ -28,3 +28,7 @@ let toString = (self: t): string => {
 let toFloat = (self: t): float => {
     self.milliseconds
 }
+
+let fromFloat = (number: float): t => {
+    milliseconds: number
+}
