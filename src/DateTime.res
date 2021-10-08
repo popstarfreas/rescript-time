@@ -1,34 +1,19 @@
-@unboxed
-type t = {
-    milliseconds: float,
+include Js.Date
+
+let elapsed = (date: t): Elapsed.t => {
+    Elapsed.fromMilliseconds(now() -. getTime(date))
 }
 
-let elapsed = (self: t): Elapsed.t => {
-    Elapsed.fromMilliseconds(Js.Date.now() -. self.milliseconds)
+let addElapsed = (date: t, elapsed: Elapsed.t) => {
+    fromFloat(getTime(date) +. Elapsed.toMilliseconds(elapsed))
 }
 
-let addElapsed = (self: t, elapsed: Elapsed.t) => {
-    milliseconds: self.milliseconds +. elapsed->Elapsed.toMilliseconds
+let subtractElapsed = (date: t, elapsed: Elapsed.t) => {
+    fromFloat(getTime(date) -. Elapsed.toMilliseconds(elapsed))
 }
 
-let isInPast = (self: t) => {
-    Js.Date.now() -. self.milliseconds > 0.
+let isInPast = (date: t) => {
+    now() -. getTime(date) > 0.
 }
 
-let now = (): t => {
-    milliseconds: Js.Date.now(),
-}
-
-let toString = (self: t): string => {
-    self.milliseconds
-    ->Js.Date.fromFloat
-    ->Js.Date.toISOString
-}
-
-let toFloat = (self: t): float => {
-    self.milliseconds
-}
-
-let fromFloat = (number: float): t => {
-    milliseconds: number
-}
+let toFloat = getTime
