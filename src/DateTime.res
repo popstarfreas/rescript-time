@@ -50,4 +50,16 @@ let addMilliseconds = (date: t, milliseconds: float): t => {
   newDate
 }
 
+let rec monthDifference = (date: t, otherDate: t): float => {
+  if date > otherDate {
+    monthDifference(otherDate, date)
+  } else {
+    let months = ref(0.)
+    months.contents = (getUTCFullYear(otherDate) -. getUTCFullYear(date)) *. 12.
+    months.contents = months.contents -. getUTCMonth(date)
+    months.contents = months.contents +. getUTCMonth(otherDate)
+    months.contents
+  }
+}
+
 let toFloat = getTime

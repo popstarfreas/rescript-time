@@ -98,3 +98,27 @@ zoraBlock("addMilliseconds", test => {
     "addMilliseconds gave bad result",
   )
 })
+
+zoraBlock("monthDifference", test => {
+  test->equal(
+    d2->DateTime.monthDifference(d1),
+    12. *. 3. +. 1.,
+    " Months between d2 and d1 is intended to be 12 * 3 + 1",
+  )
+  test->equal(
+    d1->DateTime.monthDifference(d2),
+    12. *. 3. +. 1.,
+    " Months between d1 and d2 is intended to be 12 * 3 + 1",
+  )
+
+  test->equal(
+    d3->DateTime.monthDifference(d1),
+    12. *. 3. -. 1.,
+    " Months between d3 and d1 is intended to be 12 * 3 - 1",
+  )
+  test->equal(
+    d1->DateTime.monthDifference(d3),
+    12. *. 3. -. 1.,
+    " Months between d1 and d3 is intended to be 12 * 3 - 1",
+  )
+})
