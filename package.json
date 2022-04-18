@@ -4,11 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "pta lib/js/tests/**/*.js"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@dusty-phillips/rescript-zora": "^3.0.0",
+    "pta": "^1.0.2",
     "rescript": "^9.1.1"
   }
 }

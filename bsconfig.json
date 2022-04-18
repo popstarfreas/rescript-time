@@ -1,7 +1,16 @@
 {
   "name": "@popstarfreas/rescript-time",
   "namespace": "Time",
-  "sources": {
-    "dir": "src"
-  }
+  "sources": [
+    {
+      "dir": "src"
+    },
+    {
+      "dir": "tests",
+      "type": "dev"
+    }
+  ],
+  "bs-dev-dependencies": [
+    "@dusty-phillips/rescript-zora"
+  ]
 }
