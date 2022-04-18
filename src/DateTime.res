@@ -1,11 +1,15 @@
 include Js.Date
 
+let now = (): t => {
+  now()->fromFloat
+}
+
 let fromDate = (date: t) => {
   fromFloat(getTime(date))
 }
 
 let elapsed = (date: t): Elapsed.t => {
-  Elapsed.fromMilliseconds(now() -. getTime(date))
+  Elapsed.fromMilliseconds(now()->getTime -. getTime(date))
 }
 
 let addElapsed = (date: t, elapsed: Elapsed.t) => {
@@ -17,7 +21,7 @@ let subtractElapsed = (date: t, elapsed: Elapsed.t) => {
 }
 
 let isInPast = (date: t) => {
-  now() -. getTime(date) > 0.
+  now()->getTime -. getTime(date) > 0.
 }
 
 let addDays = (date: t, days: float): t => {
